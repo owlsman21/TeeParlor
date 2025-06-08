@@ -1,260 +1,418 @@
-/* Basic Reset & Body Styling */
+/* General Body and Typography */
 body {
+    font-family: 'Creepster', cursive, sans-serif; /* Vintage horror font */
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif; /* You can change this to a preferred font */
-    background-color: #121212; /* Very dark background */
-    color: #e0e0e0; /* Light text for readability on dark background */
+    background-color: #1a0a0a; /* Very dark background */
+    color: #eee; /* Light text for contrast */
     line-height: 1.6;
+    scroll-behavior: smooth;
 }
 
-/* Container for centering content */
 .container {
-    max-width: 1200px; /* Or a width you prefer */
+    width: 90%;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px; /* Add some padding on the sides */
+    padding: 20px 0;
 }
 
-/* --- Header Styling --- */
-.main-header {
-    background-color: #000; /* Fallback dark background for header */
-    background-image: url('../images/teeparlor-banner.png'); /* THIS IS WHERE YOUR BANNER GOES */
-    background-size: cover; /* Adjusts the size to cover the header area */
-    background-position: center center; /* Centers the image */
-    background-repeat: no-repeat; /* Ensure it doesn't repeat if it's a single banner image */
-    height: 250px; /* Adjust height as needed to fit your banner and design */
-    display: flex; /* Use flexbox for centering content inside */
-    align-items: center; /* Vertically center content */
-    justify-content: center; /* Horizontally center content */
-    position: relative; /* Needed for absolute positioning of elements inside if any */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Metal Mania', cursive, sans-serif; /* Another horror-themed font for headings */
+    color: #ffcc00; /* Vibrant yellow for headings */
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
 }
 
-/* Visually hide the H1 text if the banner image contains the logo */
-.main-header .site-logo {
-    font-size: 0; /* Hides the text, but keeps it for SEO accessibility */
-    height: 0;
-    overflow: hidden;
+p {
+    margin-bottom: 10px;
 }
 
-.main-header .site-logo a {
+/* Global Link Styling */
+a {
+    color: #ffcc00; /* Vibrant yellow for all links */
     text-decoration: none;
-    color: inherit;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+a:hover {
+    color: #fff; /* White on hover for strong contrast */
+    text-decoration: underline;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.7); /* Subtle glow on hover */
+}
+
+/* Main Header */
+.main-header {
+    background-color: #0d0404; /* Even darker for header */
+    padding: 15px 0;
+    border-bottom: 3px solid #ffcc00; /* Yellow accent line */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center; /* Center header content */
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+.site-logo {
+    margin: 0;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.site-logo a {
+    color: #ffcc00; /* Logo text color */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
 }
 
 .main-nav ul {
     list-style: none;
-    padding: 0;
     margin: 0;
-    display: flex; /* Arrange links horizontally */
-    justify-content: center; /* Center navigation links */
-    position: absolute; /* Position the nav over the banner */
-    bottom: 20px; /* Adjust as needed */
-    width: 100%;
-    left: 0;
-}
-
-.main-nav li {
-    margin: 0 15px;
-}
-/* --- Category Navigation for Shop Page --- */
-.category-nav {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.category-nav ul {
-    list-style: none;
     padding: 0;
-    margin: 0;
-    display: flex; /* Arrange links horizontally */
-    justify-content: center; /* Center them */
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    display: flex;
+    flex-wrap: wrap; /* Allow navigation items to wrap */
+    justify-content: center; /* Center nav items when wrapped */
 }
 
-.category-nav li {
-    margin: 0 15px;
+.main-nav ul li {
+    margin-left: 20px;
 }
 
-.category-nav a {
-    color: #bbb; /* Slightly lighter gray */
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.05em;
-    padding: 8px 15px;
-    border: 1px solid transparent;
+.main-nav ul li a {
+    color: #eee; /* Default color for nav links */
+    padding: 10px 15px;
     border-radius: 5px;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
 }
 
-.category-nav a:hover {
-    color: #fff;
-    border-color: #666;
+.main-nav ul li a:hover,
+.main-nav ul li a.active {
+    background-color: #ffcc00; /* Vibrant yellow background on hover/active */
+    color: #111; /* Dark text on active/hover */
+    text-shadow: none; /* Remove text shadow when background is active */
 }
 
-.category-nav a.active {
-    color: #ffcc00; /* Highlight active category */
-    border-color: #ffcc00;
-}
-
-.main-nav a {
-    color: #fff; /* White links for contrast */
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.1em;
-    transition: color 0.3s ease;
-}
-
-.main-nav a:hover {
-    color: #ffcc00; /* Example hover color (gold/yellow for horror vibe) */
-}
-
-
-/* --- Main Content Styling --- */
+/* Main Content Sections */
 .main-content {
     padding: 40px 0;
 }
 
+section {
+    background-color: #111; /* Slightly lighter than body for sections */
+    margin-bottom: 30px;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    border: 1px solid #333; /* Subtle border */
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background-color: #cc0000; /* Blood red button */
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: 2px solid #ffcc00; /* Yellow border for accent */
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.btn:hover {
+    background-color: #ffcc00; /* Yellow on hover */
+    color: #111; /* Dark text on yellow hover */
+    transform: translateY(-2px);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.btn-secondary {
+    background-color: #333;
+    border-color: #666;
+}
+
+.btn-secondary:hover {
+    background-color: #666;
+    color: #fff;
+}
+
+/* Home Page Specifics */
 .hero-section {
     text-align: center;
-    padding: 60px 20px;
-    background-color: #1a1a1a; /* Slightly lighter dark background for sections */
-    margin-bottom: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 80px 20px;
+    background: url('../images/spooky-background.jpg') no-repeat center center/cover; /* Example background */
+    color: #fff;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    border-bottom: 5px solid #cc0000; /* Blood red border */
 }
 
 .hero-section h2 {
-    font-size: 2.8em;
-    margin-bottom: 15px;
-    color: #e0e0e0;
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    color: #ffcc00; /* Gold heading */
 }
 
 .hero-section p {
-    font-size: 1.2em;
+    font-size: 1.3em;
     margin-bottom: 30px;
 }
 
-.btn-shop-now {
-    display: inline-block;
-    background-color: #cc0000; /* A dark red for the button */
-    color: #fff;
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.btn-shop-now:hover {
-    background-color: #990000; /* Darker red on hover */
-}
-
-.featured-products {
-    margin-top: 40px;
-}
-
-.featured-products h3 {
-    text-align: center;
-    font-size: 2em;
-    margin-bottom: 30px;
-    color: #e0e0e0;
-}
-
-.product-grid {
+.featured-products .product-grid,
+.shop-categories .category-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
-    gap: 30px; /* Space between products */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
 }
 
-.product-item {
-    background-color: #1a1a1a;
+.product-card, .category-card {
+    background-color: #222;
     padding: 20px;
     border-radius: 8px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #444;
 }
 
-.product-item:hover {
-    transform: translateY(-5px); /* Slight lift on hover */
+.product-card:hover, .category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
 
-.product-item img {
+.product-card img, .category-card img {
     max-width: 100%;
     height: auto;
     border-radius: 5px;
     margin-bottom: 15px;
+    border: 2px solid #555;
 }
 
-.product-item h4 {
-    font-size: 1.4em;
-    margin-bottom: 10px;
-    color: #e0e0e0;
+.product-card h3, .category-card h3 {
+    font-size: 1.5em;
+    color: #ffcc00;
 }
 
-.product-item p {
-    font-size: 0.95em;
-    color: #bbb;
-    margin-bottom: 20px;
-}
-
-.btn-view-product {
-    display: inline-block;
-    background-color: #444; /* Dark button for product */
-    color: #fff;
-    padding: 8px 18px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 0.9em;
-    transition: background-color 0.3s ease;
-}
-
-.btn-view-product:hover {
-    background-color: #666;
-}
-
-/* --- Footer Styling --- */
-.main-footer {
-    background-color: #0d0d0d; /* Even darker footer */
-    color: #aaa;
-    text-align: center;
-    padding: 30px 0;
-    margin-top: 40px;
-    border-top: 1px solid #222;
-}
-
-.footer-links a {
-    color: #aaa;
-    text-decoration: none;
-    margin: 0 10px;
-    transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-    color: #fff;
-}
-/* --- Coming Soon Message Styling --- */
-.coming-soon-message {
-    text-align: center;
-    padding: 50px 20px;
-    background-color: #222; /* Slightly different background */
-    border: 1px dashed #666;
-    border-radius: 8px;
-    margin-top: 30px;
-    color: #eee;
-}
-
-.coming-soon-message p {
+.product-card .price {
     font-size: 1.2em;
-    line-height: 1.6;
+    color: #cc0000; /* Red price */
+    font-weight: bold;
     margin-bottom: 15px;
 }
 
-.coming-soon-message a {
-    color: #ffcc00; /* Match your accent color */
-    text-decoration: underline;
+/* Shop Page Specifics */
+.product-listing {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
 }
 
-.coming-soon-message a:hover {
+.product-detail-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.product-image-gallery {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.product-image-gallery img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid #ffcc00;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.product-details {
+    flex: 2;
+    min-width: 300px;
+}
+
+.product-details h2 {
+    font-size: 2.5em;
+    color: #ffcc00;
+}
+
+.product-details .price {
+    font-size: 1.8em;
+    color: #cc0000;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.product-details .description {
+    margin-bottom: 20px;
+}
+
+.size-selector, .quantity-selector {
+    margin-bottom: 20px;
+}
+
+.size-selector label, .quantity-selector label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.size-selector select, .quantity-selector input[type="number"] {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #555;
+    background-color: #333;
+    color: #eee;
+}
+
+/* About Page Specifics */
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.about-text {
+    flex: 2;
+    min-width: 300px;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 3px solid #cc0000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Contact Page Specifics */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.contact-info, .contact-form-container {
+    background-color: #222; /* Slightly darker than section background */
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: 1px solid #444;
+}
+
+.contact-info h3, .contact-form-container h3 {
+    color: #ffcc00;
+}
+
+.contact-info a {
+    color: #ffcc00; /* Brighter yellow for contact email */
+    font-weight: bold;
+}
+
+.contact-info a:hover {
+    color: #fff; /* White on hover */
+}
+
+.social-links {
+    margin-top: 15px;
+    display: flex;
+    gap: 15px;
+}
+
+.social-links img {
+    width: 45px; /* Slightly larger icons */
+    height: 45px;
+    transition: transform 0.3s ease, filter 0.3s ease; /* Add filter to transition */
+    filter: brightness(1.8) contrast(1.2); /* Makes dark icons brighter and more vivid */
+    /* If your icons are black and you want them white, try 'filter: invert(1);' instead */
+}
+
+.social-links img:hover {
+    transform: translateY(-5px) scale(1.1); /* Lift and slightly enlarge */
+    filter: brightness(2.5) contrast(1.5) drop-shadow(0 0 10px rgba(255, 255, 0, 0.5)); /* Even brighter and glow */
+}
+
+.contact-form-container .direct-email a {
+    color: #ffcc00; /* Ensure this email link is also bright */
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.contact-form-container .direct-email a:hover {
     color: #fff;
+}
+
+/* Footer */
+.main-footer {
+    background-color: #0d0404;
+    color: #aaa;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 3px solid #ffcc00;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.footer-links a {
+    color: #ffcc00; /* Yellow for footer links */
+    margin: 0 10px;
+}
+
+.footer-links a:hover {
+    color: #fff; /* White on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main-nav ul {
+        margin-top: 15px;
+        flex-direction: column; /* Stack nav items vertically */
+    }
+
+    .main-nav ul li {
+        margin: 5px 0; /* Adjust margin for stacked items */
+    }
+
+    .hero-section h2 {
+        font-size: 2.5em;
+    }
+
+    .product-detail-section,
+    .about-content,
+    .contact-grid {
+        flex-direction: column; /* Stack columns on smaller screens */
+    }
+
+    .product-image-gallery,
+    .product-details,
+    .about-text,
+    .about-image,
+    .contact-info,
+    .contact-form-container {
+        min-width: unset; /* Remove min-width constraint */
+        width: 100%; /* Take full width */
+    }
 }
