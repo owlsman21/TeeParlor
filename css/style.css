@@ -1,0 +1,196 @@
+/* Basic Reset & Body Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; /* You can change this to a preferred font */
+    background-color: #121212; /* Very dark background */
+    color: #e0e0e0; /* Light text for readability on dark background */
+    line-height: 1.6;
+}
+
+/* Container for centering content */
+.container {
+    max-width: 1200px; /* Or a width you prefer */
+    margin: 0 auto;
+    padding: 0 20px; /* Add some padding on the sides */
+}
+
+/* --- Header Styling --- */
+.main-header {
+    background-color: #000; /* Fallback dark background for header */
+    background-image: url('../images/teeparlor-banner.png'); /* THIS IS WHERE YOUR BANNER GOES */
+    background-size: cover; /* Adjusts the size to cover the header area */
+    background-position: center center; /* Centers the image */
+    background-repeat: no-repeat; /* Ensure it doesn't repeat if it's a single banner image */
+    height: 250px; /* Adjust height as needed to fit your banner and design */
+    display: flex; /* Use flexbox for centering content inside */
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
+    position: relative; /* Needed for absolute positioning of elements inside if any */
+}
+
+/* Visually hide the H1 text if the banner image contains the logo */
+.main-header .site-logo {
+    font-size: 0; /* Hides the text, but keeps it for SEO accessibility */
+    height: 0;
+    overflow: hidden;
+}
+
+.main-header .site-logo a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Arrange links horizontally */
+    justify-content: center; /* Center navigation links */
+    position: absolute; /* Position the nav over the banner */
+    bottom: 20px; /* Adjust as needed */
+    width: 100%;
+    left: 0;
+}
+
+.main-nav li {
+    margin: 0 15px;
+}
+
+.main-nav a {
+    color: #fff; /* White links for contrast */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: #ffcc00; /* Example hover color (gold/yellow for horror vibe) */
+}
+
+
+/* --- Main Content Styling --- */
+.main-content {
+    padding: 40px 0;
+}
+
+.hero-section {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #1a1a1a; /* Slightly lighter dark background for sections */
+    margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hero-section h2 {
+    font-size: 2.8em;
+    margin-bottom: 15px;
+    color: #e0e0e0;
+}
+
+.hero-section p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.btn-shop-now {
+    display: inline-block;
+    background-color: #cc0000; /* A dark red for the button */
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-shop-now:hover {
+    background-color: #990000; /* Darker red on hover */
+}
+
+.featured-products {
+    margin-top: 40px;
+}
+
+.featured-products h3 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #e0e0e0;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 30px; /* Space between products */
+}
+
+.product-item {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out;
+}
+
+.product-item:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
+.product-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.product-item h4 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    color: #e0e0e0;
+}
+
+.product-item p {
+    font-size: 0.95em;
+    color: #bbb;
+    margin-bottom: 20px;
+}
+
+.btn-view-product {
+    display: inline-block;
+    background-color: #444; /* Dark button for product */
+    color: #fff;
+    padding: 8px 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.btn-view-product:hover {
+    background-color: #666;
+}
+
+/* --- Footer Styling --- */
+.main-footer {
+    background-color: #0d0d0d; /* Even darker footer */
+    color: #aaa;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 40px;
+    border-top: 1px solid #222;
+}
+
+.footer-links a {
+    color: #aaa;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #fff;
+}
