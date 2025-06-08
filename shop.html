@@ -3,18 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TeeParlor - Shop All T-Shirts</title>
+    <title>TeeParlor - Shop All Tees</title> <!-- Specific title for the shop page -->
+    <!-- Google Fonts for Gothic Aesthetic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Metal+Mania&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Crucial: Ensure this path matches the exact casing on GitHub.com -->
     <link rel="stylesheet" href="css/style.css">
-    </head>
+</head>
 <body>
 
     <header class="main-header">
         <div class="container">
+            <!-- Ensure site logo is a link back to homepage -->
             <h1 class="site-logo"><a href="index.html">TeeParlor</a></h1>
             <nav class="main-nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="shop.html">Shop All Tees</a></li>
+                    <li><a href="shop.html" class="active">Shop All Tees</a></li> <!-- Marked as active -->
                     <li><a href="blog.html">Blog</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -24,13 +30,16 @@
     </header>
 
     <main class="main-content">
-        <div class="container">
-            <section class="shop-intro">
+        <!-- Shop intro section with inline background image -->
+        <section class="shop-intro hero-section" style="background-image: url('images/teeparlor-banner.png'); background-size: contain; background-repeat: no-repeat; background-position: center center; min-height: 250px;">
+            <div class="container hero-content-container">
                 <h2>Explore Our Full Collection</h2>
                 <p>Browse all our vintage horror and monster-themed t-shirts below. Find your next favorite!</p>
-            </section>
+            </div>
+        </section>
 
-           <section class="product-listing">
+        <div class="container">
+            <section class="product-listing">
                 <h3>All Available Designs</h3>
                 <div class="category-nav">
                     <ul>
@@ -38,12 +47,9 @@
                         <li><a href="shop-mens.html">Men's</a></li>
                         <li><a href="shop-womens.html">Women's</a></li>
                         <li><a href="shop-kids.html">Kids'</a></li>
-                        </ul>
+                    </ul>
                 </div>
-                <div class="product-grid">
-                    </div>
-            </section>
-                <h3>All Available Designs</h3>
+                <!-- This div correctly wraps all product-item divs -->
                 <div class="product-grid">
                     <div class="product-item">
                         <img src="images/nosferatu-tee.png" alt="Nosferatu Phantom Der Nacht T-shirt featuring a serious woman with sunglasses.">
@@ -73,4 +79,23 @@
                         <img src="images/wolfman.png" alt="Vintage horror 'The Wolfman' t-shirt mockup, worn by a smiling man in a forest setting.">
                         <h4>The Wolfman Tee</h4>
                         <p>Embrace the classic terror with our iconic 'The Wolfman' tee. A must-have for horror movie fans and creature feature enthusiasts!</p>
-                        <a href="YOUR_PRINTIFY_LINK_FOR_THIS_PRODUCT"
+                        <a href="YOUR_PRINTIFY_LINK_FOR_THIS_PRODUCT" class="btn-view-product">View Product</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 TeeParlor. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Shipping Info</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
