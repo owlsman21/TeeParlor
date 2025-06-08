@@ -56,6 +56,45 @@ body {
 .main-nav li {
     margin: 0 15px;
 }
+/* --- Category Navigation for Shop Page --- */
+.category-nav {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.category-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Arrange links horizontally */
+    justify-content: center; /* Center them */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.category-nav li {
+    margin: 0 15px;
+}
+
+.category-nav a {
+    color: #bbb; /* Slightly lighter gray */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.05em;
+    padding: 8px 15px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.category-nav a:hover {
+    color: #fff;
+    border-color: #666;
+}
+
+.category-nav a.active {
+    color: #ffcc00; /* Highlight active category */
+    border-color: #ffcc00;
+}
 
 .main-nav a {
     color: #fff; /* White links for contrast */
@@ -192,5 +231,30 @@ body {
 }
 
 .footer-links a:hover {
+    color: #fff;
+}
+/* --- Coming Soon Message Styling --- */
+.coming-soon-message {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #222; /* Slightly different background */
+    border: 1px dashed #666;
+    border-radius: 8px;
+    margin-top: 30px;
+    color: #eee;
+}
+
+.coming-soon-message p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.coming-soon-message a {
+    color: #ffcc00; /* Match your accent color */
+    text-decoration: underline;
+}
+
+.coming-soon-message a:hover {
     color: #fff;
 }
