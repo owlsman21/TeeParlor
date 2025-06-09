@@ -16,14 +16,16 @@ body {
     padding: 20px 0;
 }
 
+/* Use Metal Mania for headings and Creepster for site logo */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Inter', sans-serif; /* Consistent with body, or 'Metal Mania' if installed */
+    font-family: 'Metal Mania', cursive; /* Gothic font for ALL headings */
     color: #ffcc00; /* Vibrant yellow for headings */
     margin-bottom: 15px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Slightly stronger shadow for clarity */
 }
 
 p {
+    font-family: 'Inter', sans-serif; /* Keep Inter for body paragraphs for readability */
     margin-bottom: 10px;
 }
 
@@ -37,7 +39,7 @@ a {
 a:hover {
     color: #fff; /* White on hover for strong contrast */
     text-decoration: underline;
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.7); /* Subtle glow on hover */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.9); /* Stronger glow on hover */
 }
 
 /* Main Header */
@@ -65,14 +67,15 @@ a:hover {
     font-size: 2.5em;
     text-transform: uppercase;
     letter-spacing: 3px;
+    font-family: 'Creepster', cursive; /* Specific gothic font for the logo */
 }
 
 .site-logo a {
     color: #ffcc00; /* Logo text color */
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.9); /* Stronger shadow for logo clarity */
 }
 
-/* NEW: Style for the "Unleash Your Inner Monster!" tagline */
+/* Style for the "Unleash Your Inner Monster!" tagline */
 .header-tagline {
     font-family: 'Metal Mania', cursive; /* Gothic font for the tagline */
     color: #ffcc00; /* Vibrant yellow color */
@@ -113,10 +116,10 @@ a:hover {
 
 /* Main Content Sections */
 .main-content {
-    padding: 40px 0;
+    padding: 0; /* Ensures no extra space above the banner */
 }
 
-/* Base section styling, adjusted to not have fixed background for hero */
+/* Base section styling */
 section {
     background-color: #111; /* Slightly lighter than body for sections */
     margin-bottom: 30px;
@@ -162,7 +165,7 @@ section {
     text-align: center;
     padding: 40px 0; /* Adjusted padding for top/bottom, removed side padding here */
     background: url('../images/teeparlor-banner.png') no-repeat center center;
-    background-size: contain; /* CRITICAL: Make image fit entirely (show bats) */
+    background-size: contain; /* Make image fit entirely (show bats) */
     background-color: #0d0404; /* Dark background color to fill empty space if image doesn't cover all */
     color: #fff; /* Default text color */
     border-bottom: 5px solid #cc0000; /* Red border at bottom */
@@ -182,6 +185,7 @@ section {
     border-radius: 0; /* Remove border-radius for full width */
     box-shadow: none; /* Remove box-shadow for full width */
     border: none; /* Remove any border that causes gaps */
+    margin-top: 40px; /* Separates it from the header */
 }
 
 /* Overlay for Hero Section */
@@ -212,69 +216,72 @@ section {
     max-width: 800px; /* Limit width of text for readability on very wide screens */
 }
 
+/* Remove top padding from the container holding "Featured Designs" on homepage */
+main > .container {
+    padding-top: 0;
+}
 
-.featured-products .product-grid,
-.shop-categories .category-grid {
+/* Featured Products Grid on Homepage (already correctly set up) */
+.featured-products .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
     margin-top: 20px;
 }
 
-.product-card, .category-card {
-    background-color: #222;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #444;
-}
-
-.product-card:hover, .category-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-}
-
-.product-card img, .category-card img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    border: 2px solid #555;
-}
-
-.product-card h3, .category-card h3 {
-    font-size: 1.5em;
-    color: #ffcc00;
-}
-
-.product-card .price {
-    font-size: 1.2em;
-    color: #cc0000; /* Red price */
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
 /* Shop Page Specifics */
-.shop-intro h2 {
+.shop-intro {
     text-align: center;
+    margin-bottom: 40px; /* Add margin below the intro section */
+}
+
+.shop-intro h2 {
     font-size: 2.8em;
     margin-bottom: 15px;
 }
 
 .shop-intro p {
-    text-align: center;
+    font-family: 'Inter', sans-serif; /* Keep Inter for intro paragraph for readability */
     max-width: 700px;
-    margin: 0 auto 40px auto;
+    margin: 0 auto;
     font-size: 1.1em;
 }
 
+/* NEW: Layout for .product-listing container */
 .product-listing {
+    display: flex; /* Make the section a flex container */
+    flex-direction: column; /* Stack its children (shop-header-row and product-grid) vertically */
+    gap: 30px; /* Space between the header row and the product grid */
+    margin-top: 30px; /* Overall top margin for the section */
+    padding: 20px; /* Add padding to the section itself for better visuals */
+    background-color: #222; /* Add a background for the entire section */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: 1px solid #333;
+}
+
+/* NEW: Style for the shop-header-row to put heading and categories in line */
+.shop-header-row {
+    display: flex;
+    justify-content: space-between; /* Pushes elements to ends */
+    align-items: center; /* Vertically aligns them */
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    /* Removed margin-bottom here as gap on parent .product-listing handles it */
+}
+
+.product-listing h3 { /* This targets the "All Available Designs" heading */
+    margin: 0; /* Remove default margin from h3 in flex container */
+    flex-shrink: 0; /* Prevent heading from shrinking too much */
+    padding-right: 20px; /* Space between heading and nav */
+}
+
+/* Product Grid for Shop Page */
+.product-grid { /* This now directly contains the product items on shop.html */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
-    margin-top: 30px;
+    margin-top: 0; /* Reset margin-top as gap on parent .product-listing handles it */
+    width: 100%; /* Ensure the product grid takes full width */
 }
 
 .product-item {
@@ -307,6 +314,7 @@ section {
 }
 
 .product-item p {
+    font-family: 'Inter', sans-serif; /* Keep Inter for product item paragraphs */
     font-size: 0.95em;
     color: #ccc;
     margin-bottom: 20px;
@@ -334,20 +342,22 @@ section {
 /* Category Navigation for Shop Page */
 .category-nav {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 0; /* Remove any lingering margins */
+    flex-grow: 1; /* Allow category-nav to take available space */
 }
 
 .category-nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex; /* This is the key for horizontal layout */
-    justify-content: center; /* Centers the items */
-    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    display: flex; /* Key: Makes list items horizontal */
+    justify-content: flex-end; /* Align categories to the right */
+    flex-wrap: wrap; /* Allow wrapping for responsiveness */
+    gap: 10px; /* Spacing between category links */
 }
 
 .category-nav li {
-    margin: 0 15px; /* Spacing between items */
+    margin: 0; /* Reset margins from previous attempts */
 }
 
 .category-nav a {
@@ -355,7 +365,7 @@ section {
     text-decoration: none;
     font-weight: bold;
     font-size: 1.05em;
-    padding: 8px 15px;
+    padding: 8px 12px; /* Adjusted padding */
     border: 1px solid transparent;
     border-radius: 5px;
     transition: all 0.3s ease;
@@ -369,6 +379,7 @@ section {
 .category-nav a.active {
     color: #ffcc00;
     border-color: #ffcc00;
+    background-color: #333; /* Highlight active category */
 }
 
 /* Coming Soon Message Styling */
@@ -405,7 +416,7 @@ section {
 }
 
 .about-us-section h2 {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Metal Mania', cursive; /* Use gothic font */
     font-size: 2.8em;
     color: #ffcc00;
     text-align: center;
@@ -423,6 +434,7 @@ section {
 }
 
 .about-us-section p {
+    font-family: 'Inter', sans-serif; /* Keep Inter for paragraph readability */
     font-size: 1.1em;
     line-height: 1.8;
     margin-bottom: 20px;
@@ -430,7 +442,7 @@ section {
 }
 
 .about-us-section h3 {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Metal Mania', cursive; /* Use gothic font */
     font-size: 2em;
     color: #ffcc00;
     margin-top: 40px;
@@ -455,7 +467,7 @@ section {
 }
 
 .contact-section h2 {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Metal Mania', cursive; /* Use gothic font */
     font-size: 2.8em;
     color: #ffcc00;
     margin-bottom: 20px;
@@ -463,6 +475,7 @@ section {
 }
 
 .contact-intro {
+    font-family: 'Inter', sans-serif; /* Keep Inter for intro paragraph readability */
     font-size: 1.1em;
     max-width: 800px;
     margin: 0 auto 40px auto;
@@ -492,7 +505,7 @@ section {
 }
 
 .contact-info h3, .contact-form-container h3 {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Metal Mania', cursive; /* Use gothic font */
     font-size: 2em;
     color: #ffcc00;
     margin-bottom: 25px;
@@ -500,6 +513,7 @@ section {
 }
 
 .contact-info p {
+    font-family: 'Inter', sans-serif; /* Keep Inter for paragraph readability */
     margin-bottom: 15px;
     line-height: 1.6;
 }
@@ -534,6 +548,7 @@ section {
 }
 
 .contact-form-container .direct-email {
+    font-family: 'Inter', sans-serif; /* Keep Inter for email readability */
     font-size: 1.4em;
     font-weight: bold;
     margin: 20px 0;
@@ -585,6 +600,22 @@ section {
 
     .main-nav ul li {
         margin: 5px 0;
+    }
+
+    .shop-header-row { /* Ensure header row stacks on small screens */
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .shop-header-row h3 {
+        padding-right: 0; /* Remove padding when stacked */
+        margin-bottom: 10px; /* Add some space below heading */
+    }
+
+    .category-nav ul {
+        justify-content: center; /* Center categories when stacked */
+        width: 100%; /* Ensure they take full width */
     }
 
     .hero-section h2 {

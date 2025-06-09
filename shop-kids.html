@@ -17,10 +17,13 @@
         <div class="container">
             <!-- Ensure site logo is a link back to homepage -->
             <h1 class="site-logo"><a href="index.html">TeeParlor</a></h1>
+            <div class="header-tagline">
+                Unleash Your Inner Monster!
+            </div>
             <nav class="main-nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="shop.html" class="active">Shop All Tees</a></li> <!-- Shop All Tees is active as Kids' is a subcategory -->
+                    <li><a href="shop.html" class="active">Shop All Tees</a></li> <!-- Shop All Tees is active for now, as Kids' is a subcategory -->
                     <li><a href="blog.html">Blog</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -30,7 +33,7 @@
     </header>
 
     <main class="main-content">
-        <!-- Kids' intro section with inline background image -->
+        <!-- Shop intro section with inline background image -->
         <section class="shop-intro hero-section" style="background-image: url('images/teeparlor-banner.png'); background-size: contain; background-repeat: no-repeat; background-position: center center; min-height: 250px;">
             <div class="container hero-content-container">
                 <h2>Kids' Collection: Little Monsters, Big Style!</h2>
@@ -40,14 +43,16 @@
 
         <div class="container">
             <section class="product-listing">
-                <h3>Designs for Spooky Sprouts</h3>
-                <div class="category-nav">
-                    <ul>
-                        <li><a href="shop.html">All Tees</a></li>
-                        <li><a href="shop-mens.html">Men's</a></li>
-                        <li><a href="shop-womens.html">Women's</a></li>
-                        <li><a href="shop-kids.html" class="active">Kids'</a></li> <!-- Kids' is active within category nav -->
-                    </ul>
+                <div class="shop-header-row"> <!-- Added this wrapper for heading and category nav -->
+                    <h3>Designs for Spooky Sprouts</h3>
+                    <div class="category-nav">
+                        <ul>
+                            <li><a href="shop.html">All Tees</a></li>
+                            <li><a href="shop-mens.html">Men's</a></li>
+                            <li><a href="shop-womens.html">Women's</a></li>
+                            <li><a href="shop-kids.html" class="active">Kids'</a></li> <!-- Corrected: points to shop-kids.html -->
+                        </ul>
+                    </div>
                 </div>
                 <!-- Placeholder for kids' specific products -->
                 <div class="coming-soon-message">
@@ -55,17 +60,6 @@
                     <p>Check back soon for delightfully dreadful designs!</p>
                     <a href="shop.html">Browse all tees</a> while you wait.
                 </div>
-                <!-- You would add kids' specific product items here, e.g.:
-                <div class="product-grid">
-                    <div class="product-item">
-                        <img src="images/kids-tee-example.png" alt="Kids' horror t-shirt design">
-                        <h4>Little Ghoul Gang Tee (Kids')</h4>
-                        <p>Perfect for the aspiring monster hunter!</p>
-                        <a href="YOUR_PRINTIFY_LINK_FOR_KIDS_GHOUL" class="btn-view-product">View Product</a>
-                    </div>
-                    ... more kids' tees ...
-                </div>
-                -->
             </section>
         </div>
     </main>

@@ -17,10 +17,13 @@
         <div class="container">
             <!-- Ensure site logo is a link back to homepage -->
             <h1 class="site-logo"><a href="index.html">TeeParlor</a></h1>
+            <div class="header-tagline">
+                Unleash Your Inner Monster!
+            </div>
             <nav class="main-nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="shop.html" class="active">Shop All Tees</a></li> <!-- Shop All Tees is active as Women's is a subcategory -->
+                    <li><a href="shop.html" class="active">Shop All Tees</a></li> <!-- Shop All Tees is active for now, as Women's is a subcategory -->
                     <li><a href="blog.html">Blog</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -30,7 +33,7 @@
     </header>
 
     <main class="main-content">
-        <!-- Women's intro section with inline background image -->
+        <!-- Shop intro section with inline background image -->
         <section class="shop-intro hero-section" style="background-image: url('images/teeparlor-banner.png'); background-size: contain; background-repeat: no-repeat; background-position: center center; min-height: 250px;">
             <div class="container hero-content-container">
                 <h2>Women's Collection: Elegance in Shadow</h2>
@@ -40,14 +43,16 @@
 
         <div class="container">
             <section class="product-listing">
-                <h3>Designs for the Macabre Mistress</h3>
-                <div class="category-nav">
-                    <ul>
-                        <li><a href="shop.html">All Tees</a></li>
-                        <li><a href="shop-mens.html">Men's</a></li>
-                        <li><a href="shop-womens.html" class="active">Women's</a></li> <!-- Women's is active within category nav -->
-                        <li><a href="shop-kids.html">Kids'</a></li>
-                    </ul>
+                <div class="shop-header-row"> <!-- Added this wrapper for heading and category nav -->
+                    <h3>Designs for the Macabre Mistress</h3>
+                    <div class="category-nav">
+                        <ul>
+                            <li><a href="shop.html">All Tees</a></li>
+                            <li><a href="shop-mens.html">Men's</a></li>
+                            <li><a href="shop-womens.html" class="active">Women's</a></li> <!-- Corrected: points to shop-womens.html -->
+                            <li><a href="shop-kids.html">Kids'</a></li>     <!-- Corrected: points to shop-kids.html -->
+                        </ul>
+                    </div>
                 </div>
                 <!-- Placeholder for women's specific products -->
                 <div class="coming-soon-message">
@@ -55,17 +60,6 @@
                     <p>Check back soon for alluring new designs and dark delights!</p>
                     <a href="shop.html">Browse all tees</a> while you wait.
                 </div>
-                <!-- You would add women's specific product items here, e.g.:
-                <div class="product-grid">
-                    <div class="product-item">
-                        <img src="images/womens-tee-example.png" alt="Women's horror t-shirt design">
-                        <h4>Vampira's Gaze Tee (Women's)</h4>
-                        <p>A seductive design for the queen of the night.</p>
-                        <a href="YOUR_PRINTIFY_LINK_FOR_WOMENS_VAMPIRA" class="btn-view-product">View Product</a>
-                    </div>
-                    ... more women's tees ...
-                </div>
-                -->
             </section>
         </div>
     </main>

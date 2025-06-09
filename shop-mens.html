@@ -17,10 +17,13 @@
         <div class="container">
             <!-- Ensure site logo is a link back to homepage -->
             <h1 class="site-logo"><a href="index.html">TeeParlor</a></h1>
+            <div class="header-tagline">
+                Unleash Your Inner Monster!
+            </div>
             <nav class="main-nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="shop.html" class="active">Shop All Tees</a></li> <!-- Shop All Tees is active as Men's is a subcategory -->
+                    <li><a href="shop.html" class="active">Shop All Tees</a></li> <!-- Shop All Tees is active for now, as Men's is a subcategory -->
                     <li><a href="blog.html">Blog</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -30,7 +33,7 @@
     </header>
 
     <main class="main-content">
-        <!-- Men's intro section with inline background image -->
+        <!-- Shop intro section with inline background image -->
         <section class="shop-intro hero-section" style="background-image: url('images/teeparlor-banner.png'); background-size: contain; background-repeat: no-repeat; background-position: center center; min-height: 250px;">
             <div class="container hero-content-container">
                 <h2>Men's Collection: Unleash Your Inner Beast</h2>
@@ -40,14 +43,16 @@
 
         <div class="container">
             <section class="product-listing">
-                <h3>Designs for the Malevolent Gentleman</h3>
-                <div class="category-nav">
-                    <ul>
-                        <li><a href="shop.html">All Tees</a></li>
-                        <li><a href="shop-mens.html" class="active">Men's</a></li> <!-- Men's is active within category nav -->
-                        <li><a href="shop-womens.html">Women's</a></li>
-                        <li><a href="shop-kids.html">Kids'</a></li>
-                    </ul>
+                <div class="shop-header-row"> <!-- Added this wrapper for heading and category nav -->
+                    <h3>Designs for the Malevolent Gentleman</h3>
+                    <div class="category-nav">
+                        <ul>
+                            <li><a href="shop.html">All Tees</a></li>
+                            <li><a href="shop-mens.html" class="active">Men's</a></li> <!-- Corrected: points to shop-mens.html -->
+                            <li><a href="shop-womens.html">Women's</a></li> <!-- Corrected: points to shop-womens.html -->
+                            <li><a href="shop-kids.html">Kids'</a></li>     <!-- Corrected: points to shop-kids.html -->
+                        </ul>
+                    </div>
                 </div>
                 <!-- Placeholder for men's specific products -->
                 <div class="coming-soon-message">
@@ -55,17 +60,6 @@
                     <p>Check back soon for new arrivals and horrifyingly good designs!</p>
                     <a href="shop.html">Browse all tees</a> while you wait.
                 </div>
-                <!-- You would add men's specific product items here, e.g.:
-                <div class="product-grid">
-                    <div class="product-item">
-                        <img src="images/mens-tee-example.png" alt="Men's horror t-shirt design">
-                        <h4>Dracula's Embrace Tee (Men's)</h4>
-                        <p>A chilling tribute to the Count himself.</p>
-                        <a href="YOUR_PRINTIFY_LINK_FOR_MENS_DRACULA" class="btn-view-product">View Product</a>
-                    </div>
-                    ... more men's tees ...
-                </div>
-                -->
             </section>
         </div>
     </main>
